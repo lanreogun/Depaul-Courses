@@ -281,12 +281,12 @@
 
     
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}12}]:} \PY{k+kn}{import} \PY{n+nn}{warnings}
-         \PY{n}{warnings}\PY{o}{.}\PY{n}{filterwarnings}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ignore}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-         \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
-         \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-         \PY{k+kn}{from} \PY{n+nn}{scipy} \PY{k}{import} \PY{n}{stats}
-         \PY{k+kn}{from} \PY{n+nn}{IPython}\PY{n+nn}{.}\PY{n+nn}{display} \PY{k}{import} \PY{n}{HTML}\PY{p}{,} \PY{n}{display}
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{warnings}
+        \PY{n}{warnings}\PY{o}{.}\PY{n}{filterwarnings}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ignore}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
+        \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+        \PY{k+kn}{from} \PY{n+nn}{scipy} \PY{k}{import} \PY{n}{stats}
+        \PY{k+kn}{from} \PY{n+nn}{IPython}\PY{n+nn}{.}\PY{n+nn}{display} \PY{k}{import} \PY{n}{HTML}\PY{p}{,} \PY{n}{display}
 \end{Verbatim}
 
 
@@ -302,50 +302,10 @@ a. Create a data frame object by importing the dataset.
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}2}]:} \PY{c+c1}{\PYZsh{} Create a data frame object by importing the dataset. }
-        \PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{C:/Users/e059172/OneDrive \PYZhy{} DePaul University/Depaul\PYZhy{}Courses/IS 467/loan/loan.csv}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{delimiter}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZti{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{na\PYZus{}values}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{nan}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n}{df}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
+        \PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{loan/loan.csv}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{delimiter}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZti{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{na\PYZus{}values}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{nan}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 
 
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}2}]:}         id  member\_id  loan\_amnt  funded\_amnt  funded\_amnt\_inv        term  \textbackslash{}
-        0  1077501    1296599       5000         5000           4975.0   36 months   
-        1  1077430    1314167       2500         2500           2500.0   60 months   
-        2  1077175    1313524       2400         2400           2400.0   36 months   
-        3  1076863    1277178      10000        10000          10000.0   36 months   
-        4  1075358    1311748       3000         3000           3000.0   60 months   
-        
-          int\_rate  installment grade sub\_grade     {\ldots}      num\_tl\_op\_past\_12m  \textbackslash{}
-        0   10.65\%       162.87     B        B2     {\ldots}                     NaN   
-        1   15.27\%        59.83     C        C4     {\ldots}                     NaN   
-        2   15.96\%        84.33     C        C5     {\ldots}                     NaN   
-        3   13.49\%       339.31     C        C1     {\ldots}                     NaN   
-        4   12.69\%        67.79     B        B5     {\ldots}                     NaN   
-        
-          pct\_tl\_nvr\_dlq percent\_bc\_gt\_75  pub\_rec\_bankruptcies tax\_liens  \textbackslash{}
-        0            NaN              NaN                   0.0       0.0   
-        1            NaN              NaN                   0.0       0.0   
-        2            NaN              NaN                   0.0       0.0   
-        3            NaN              NaN                   0.0       0.0   
-        4            NaN              NaN                   0.0       0.0   
-        
-          tot\_hi\_cred\_lim total\_bal\_ex\_mort total\_bc\_limit total\_il\_high\_credit\_limit  \textbackslash{}
-        0             NaN               NaN            NaN                        NaN   
-        1             NaN               NaN            NaN                        NaN   
-        2             NaN               NaN            NaN                        NaN   
-        3             NaN               NaN            NaN                        NaN   
-        4             NaN               NaN            NaN                        NaN   
-        
-          Unnamed: 111  
-        0          NaN  
-        1          NaN  
-        2          NaN  
-        3          NaN  
-        4          NaN  
-        
-        [5 rows x 112 columns]
-\end{Verbatim}
-            
     \begin{verbatim}
 b. How many features exist in the dataset that contain at least one missing case?
 \end{verbatim}
@@ -384,7 +344,7 @@ d. For the feature loan_amnt¸ determine the following: count, count missing, me
 \end{verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{loan\PYZus{}amt} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{loan\PYZus{}amnt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{tolist}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{loan\PYZus{}amt} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{loan\PYZus{}amnt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{tolist}\PY{p}{(}\PY{p}{)}
         
         \PY{c+c1}{\PYZsh{} count values}
         \PY{n+nb}{print} \PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{loan\PYZus{}amnt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Loan Amounts}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
@@ -429,7 +389,7 @@ e. Create a scatter plot using the features loan_amnt and installment.
 \end{verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}7}]:} \PY{k+kn}{import} \PY{n+nn}{plotly}\PY{n+nn}{.}\PY{n+nn}{plotly} \PY{k}{as} \PY{n+nn}{py}
+{\color{incolor}In [{\color{incolor}6}]:} \PY{k+kn}{import} \PY{n+nn}{plotly}\PY{n+nn}{.}\PY{n+nn}{plotly} \PY{k}{as} \PY{n+nn}{py}
         \PY{k+kn}{import} \PY{n+nn}{plotly}\PY{n+nn}{.}\PY{n+nn}{graph\PYZus{}objs} \PY{k}{as} \PY{n+nn}{pgo}
         
         
@@ -448,7 +408,7 @@ e. Create a scatter plot using the features loan_amnt and installment.
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}7}]:} <plotly.tools.PlotlyDisplay object>
+{\color{outcolor}Out[{\color{outcolor}6}]:} <plotly.tools.PlotlyDisplay object>
 \end{Verbatim}
             
     \begin{verbatim}
@@ -456,11 +416,10 @@ f. Determine the Pearson correlation coefficient for the loan_amnt and funded_am
 \end{verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{a} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{installment}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{tolist}\PY{p}{(}\PY{p}{)}
-         \PY{n}{b} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{loan\PYZus{}amnt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{tolist}\PY{p}{(}\PY{p}{)}
-         \PY{n+nb}{print} \PY{p}{(}\PY{n}{stats}\PY{o}{.}\PY{n}{pearsonr}\PY{p}{(}\PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{)}\PY{p}{)}
-         
-         \PY{n+nb}{print} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{indicates weak evidence against the null hypothesis and reject the null hypothesis}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{a} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{installment}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{tolist}\PY{p}{(}\PY{p}{)}
+        \PY{n}{b} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{loan\PYZus{}amnt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{tolist}\PY{p}{(}\PY{p}{)}
+        \PY{n+nb}{print} \PY{p}{(}\PY{n}{stats}\PY{o}{.}\PY{n}{pearsonr}\PY{p}{(}\PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{)}\PY{p}{)}
+        \PY{n+nb}{print} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{indicates weak evidence against the null hypothesis and reject the null hypothesis}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 
 
@@ -507,7 +466,7 @@ d. Give one example of Supervised Learning and one example of Unsupervised Learn
 
 Supervised Learning (Training Needed)
 Suppose you had a basket and filled it with different kinds of fruits. Your task is to arrange them into groups. 
-now we have categorized each fruit into groups (training the data) based on characteristics from the groups we can now learn from it and use it to identify new fruits added to the basket
+now we have categorized each fruit into groups (training the data) based on categorical characteristics from the groups we can now learn from it and use it to identify new fruits added to the basket
 
 Un-Supervised Learning (No Training Needed)
 Using the same example we dont know any of the different furits in the basket but just arrange them based on physical characteristics. color, size, weight. and use those characteristics to match and identify new items added to the basket
@@ -521,8 +480,16 @@ measure):}\label{in-your-own-words-define-the-following-feature-selection-measur
 a. Gini Index
 
     This is a statistical measure of distribution, it calculates the diversity from the sum of squared category probabilities 1/(1−G)
+    
+\end{verbatim}
 
+\begin{figure}
+\centering
+\includegraphics{Screen Shot 2018-06-28 at 10.53.42 PM.png}
+\caption{alt text}
+\end{figure}
 
+\begin{verbatim}
 b. Gini Split
 
     ??
@@ -531,15 +498,26 @@ c. Entropy
     
     Entropy is a measure for (un-)orderedness
     
-    ES =−p⊕⋅log2 p⊕− p⊖⋅log2 p⊖
-    
+\end{verbatim}
+
+\begin{figure}
+\centering
+\includegraphics{Screen Shot 2018-06-28 at 10.59.28 PM.png}
+\caption{alt text}
+\end{figure}
+
+\begin{verbatim}
 d. Gain Split
 
     ??
     
 e. Gain Ratio
 
-    modification of the information gain that reduces its bias towards multi-valued attributes
+    modification of the information gain that reduces its bias towards multi-valued attributes_
+    
+f. Misclassification Rate
+
+    ??
 \end{verbatim}
 
     \paragraph{4. Consider the following training set for a binary
